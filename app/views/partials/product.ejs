@@ -1,0 +1,18 @@
+<div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100">
+      <a href="/article/<%= product.id %>">
+        <img class="card-img-top" src="/images/<%= product.name %>.jpg" alt="">
+        <div class="badge-category badge badge-pill badge-<%= product.category %>"><%= product.category %></div>
+      </a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="/article/<%= product.id %>"><% product.name %></a>
+        </h4>
+        <h5><%= product.price %>€</h5>
+        <p class="card-text"><%= product.name %></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+      </div>
+    </div>
+  </div>

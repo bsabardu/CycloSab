@@ -50,18 +50,18 @@ body {
   left: 15px;
 }
 
-.badge-gentil {
+.badge-Vélo {
   background-color: green;
   color: wheat;
 }
 
-.badge-méchant,
+.badge-Casque,
 .badge-mechant {
   background-color: red;
   color: wheat;
 }
 
-.badge-animal {
+.badge-Chaussures {
   background-color: blue;
   color: wheat;
 }

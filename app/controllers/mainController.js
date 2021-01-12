@@ -1,20 +1,16 @@
-const path = require('path');
-
-const mainController = {
-
-  // méthode pour la page d'accueil
-  homePage: (request, response) => {
-    const filePath = path.resolve(__dirname + '/../../integration/accueil.html');
-    response.sendFile(filePath);
-  },
-
-  // méthode pour la page article
-  articlePage: (request, response) => {
-    const filePath = path.resolve(__dirname + '/../../integration/article.html');
-    response.sendFile(filePath);
-  }
-
-};
+const dataMapper = require('../dataMapper')
 
 
-module.exports = mainController;
+exports.homePage = (request, response) => {
+  dataMapper.getAllProducts((products) => {
+    response.render('accueil', {products});
+  })
+}
+
+exports.articlePage = (request, response) => {
+  dataMapper.getOneProduct(request.params.id, (product) => {
+    response.render('article', {product});
+  })
+
+
+}

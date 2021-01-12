@@ -33,18 +33,18 @@ CREATE TABLE IF NOT EXISTS "review" (
   FOREIGN KEY("product_id") REFERENCES "product"("id")
 );
 
-INSERT INTO "review" ("id", "author", "note", "title", "message", "figurine_id") VALUES
-(1,'Jean Claude Dus',4, 'Une belle figurine', 'La finition est bien, le rose est vraiment rose. Seul bémol, le livreur a abimé la main droite.' ,1),
-(2,'Thérèse de Monsou',2, 'Bof Bof...', 'La figurine ne tient pas debout seule. Certains détails sont mal finis, comme les bracelets.' ,1),
-(3,'Monsieur Preskovitch',5, 'Juste parfait', 'C''est tellement parfait, on dirait que c''est roulé à la main sous les aisselles.' ,1),
+INSERT INTO "review" ("id", "author", "note", "title", "message", "product_id") VALUES
+(1,'Couleg',4, 'Bon rapport qualité prix', 'Satisfaisant pour montage sur home trainer Tacx flow' ,1),
+(2,'KingJames',1, 'Pneus collés à la jante!!!', 'Dans l’ensemble le vélo est conforme aux attentes mais pour une raison inconnue les ingénieurs ont décidé de coller à la super glue les pneus à la jante' ,1),
+(3,'Monsieur Preskovitch',5, 'Juste parfait', 'J''ai acheté ce vélo à sa sortie, c''est à dire fin d''été 2019. Ce vélo est parfaitement équipé, les freins hydro-mécaniques ont un très bon mordant, le groupe fait le café, le vélo est très rigide ce qui est super agréable sur les chemins tout comme sur la route. Les défauts que je lui trouve sont la peinture (belle mais très fragile) et le poids de la partie arrière du vélo (roue arriere/cassette). C''est un très bon vélo, je recommande !' ,1),
 
-(4,'Barbapapix',5, 'Parfait', 'Un niveau de détail bluffant. A se procurer absolument si vous êtes collectionneurs.' ,2),
-(5,'Fabrice',4, 'Très bien', 'Le rapport qualité prix est plus que bien, le prix est vraiment bas pour cette figurine de qualité.' ,2),
-(6,'Thomas',1, 'Déçu', 'Trop de défaut de peintures... A éviter' ,2),
+(4,'Amex_82',1, 'Craque énormément', 'J ai reçu ce vélo au mois de Mai et la tige de selle s est mise à craquer dans le cadre des la première utilisation. Malgré 5 passages en atelier, le problème n a pas été résolu. Finalement, le cadre à été pris en garantie et remplacé. 1 semaine après le remplacement, la tige de selle s est remise à craquer dans le cadre. Cette fois ci, j ai en plus le boîtier de pedalier qui craque. Bref, matériel pas au point. Dommage, le comportement n est pas si mal.' ,2),
+(5,'Charly68971',5, 'Une vraie bête de course','Ça fait 2 semaines que je l''ai reçu et c''est un vrai bonheur. Ce vélo a un rendement exceptionnel associé à un confort remarquable. il est très bien équilibré et réagit au moindre coup de pédale. Extrêmement stable à grande vitesse, et le freinage hydraulique à disques est très sécurisant. Les roues Hollowgram en carbone sont de très bonne qualité et contribuent au comportement du vélo. Le seul point négatif est le montage de disques d''entrée de gamme et d''une cassette 105 alors que les autres composants Shimano sont en Ultegra. le prix du vélo aurait mérité d''avoir du 100% Ultegra.' ,2),
+(6,'Robin',4, 'Mon premier vélo', 'Ce vélo est mon premier - essentiellement pour suppléer ma pratique du running puis me lancer dans le triathlon. J''ai dépensé un peu plus que le budget que je m''étais alloué mais j''ai eu un coup de coeur visuel' ,2),
 
 (7,'Guillaume',3, 'Très bon mais ...', 'Léger, centre de gravité bien centré, très joueur pour un VAE, utilisé quotidiennement pour aller bosser les trajets sont des vrais plaisirs ! Par contre à ce prix on peut s''attendre à un vélo complet, le mien est arrivé sans contacteur d''assistance Shimano, du coup je ne peux rien régler sur mon compteur, même pas l''heure ni le Bluetooth ... A 3000€ ça fait mal ...' ,3),
 (8,'Tientien',5, 'Excellent compromis', 'Ce vélo répond à tous mes besoins : très beau, bien équipé, un niveau de finition exceptionnel, une grande autonomie, un montage typé “Gravel”, confortable mais assez vif, pas trop cher. Je ne lui trouve que des qualités.' ,3),
-(9,'Marc',5, 'Excellent produit ! Livré monté et emballage très propre et adapté. Seul point à savoir, il n''y a pas de commande de passage de mode rapide séparé de l''écran principal.' ,3),
+(9,'Marc',5, 'Excellent produit !', 'Livré monté et emballage très propre et adapté. Seul point à savoir, il n''y a pas de commande de passage de mode rapide séparé de l''écran principal.' ,3),
 
 (10,'Coursverte',5, 'Bluffant', 'Avec 3 mois de recul, ce casque est tout simplement bluffant. Très belle finition, très léger, parfaitement adapté à la tête, ce casque se fait oublier.' ,4),
 (11,'Gégé',5,'Rapport qualité prix moyen','Le Ionos que je possédais avant était mieux fini et plus aéré' ,4),
