@@ -1,4 +1,4 @@
-<%- include('partials/header.ejs') %>
+<%- include('partials/_header.ejs') %>
 
 
   <!-- Page Content -->
@@ -6,27 +6,8 @@
 
     <div class="row">
 
-      <div class="col-lg-3">
+      <%- include('partials/_leftMenu') %>
 
-        <h1 class="my-4">O'Fig</h1>
-        
-        <h5>Catégories</h5>
-        <div class="list-group">
-          <a class="list-group-item d-flex justify-content-between align-items-center" href="#">
-              Les gentils
-            <span class="badge badge-primary badge-pill">4</span>
-          </a>
-          <a class="list-group-item d-flex justify-content-between align-items-center" href="#">
-              Les méchants
-            <span class="badge badge-primary badge-pill">3</span>
-          </a>
-          <a class="list-group-item d-flex justify-content-between align-items-center" href="#">
-              Les animaux
-            <span class="badge badge-primary badge-pill">1</span>
-          </a>
-        </div>
-
-      </div>
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
@@ -34,7 +15,7 @@
         <div class="row">
 
             <% for (product of products) { %>
-                <%- include('partials/product', {product}) %>
+                <%- include('partials/_product', {product}) %>
             <% } %>
 
         </div>
@@ -50,4 +31,4 @@
   <!-- /.container -->
 
   <!-- Footer -->
-<%- include('partials/footer.ejs') %>
+<%- include('partials/_footer.ejs') %>
