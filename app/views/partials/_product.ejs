@@ -12,7 +12,15 @@
         <p class="card-text"><%= product.name %></p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+        <small class="text-muted">
+          <% for (i = 0; i < product.average_note; i++) { %>
+            <%- '&#9733;' %>
+            <% } %>
+
+            <% for (i = 0; i < 5 - product.average_note; i++) { %>
+            <%- '&#9734;' %>
+            <% } %>
+          </small>
       </div>
     </div>
   </div>

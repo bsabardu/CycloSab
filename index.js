@@ -15,6 +15,9 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
+const dataMapper = require('./app/dataMapper');
+const { request, response } = require('express');
+
 app.set('view engine', 'ejs')
 app.set('views', './app/views')
 
@@ -28,6 +31,15 @@ app.use(session({
   saveUninitialized: true,
 }))
 
+
+//Middleware to get categories
+app.use('', (req,res,next) => {
+  dataMapper.getCountByCategorie((categoriesCounts) => {
+    app.locals.categoriesCounts = categoriesCounts;
+  })
+  next();
+}
+)
 
 // routage !
 app.use(router);

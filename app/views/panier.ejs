@@ -1,6 +1,6 @@
 <%- include('partials/_header') %> 
 
-<% console.log(cart) %>
+
   <!-- Page Content -->
   <div class="container container-main">
 
@@ -16,7 +16,6 @@
             </thead>
             <tbody>
                 <% 
-                console.log(cart);
                     if(cart) {
                     for (product of cart) { %>
                     <tr>
@@ -30,7 +29,7 @@
       
                       <td>
                         <strong><%= product.quantity %></strong>
-                        <a href="/cart/add/<%= product.id %>">+</a> / <a href="#">-</a>
+                        <a href="/cart/add/<%= product.id %>">+</a> / <a href="/cart/remove/<%= product.id %>">-</a>
                       </td>
       
                       <td>
@@ -46,7 +45,7 @@
                   Frais de port
                 </td>
                 <td class="item-subtotal">
-                  $9.99
+                  <%= shippingFees %> €
                 </td>
               </tr>
 
@@ -56,16 +55,16 @@
                     Total HT
                   </td>
                   <td class="item-subtotal">
-                    $84.96
+                    <%= taxFreeTotal %> €
                   </td>
                 </tr>
 
                 <tr>
                   <td class="text-right" colspan="2">
-                    TVA 20%
+                    TVA <%= taxBase * 100 %>%
                   </td>
                   <td class="item-subtotal">
-                    $16.99
+                   <%= taxAmount %> €
                   </td>
                 </tr>
 
@@ -74,7 +73,7 @@
                     Total TTC
                   </td>
                   <td class="item-total">
-                    $101.94
+                    <%= total %> €
                   </td>
                 </tr>
 
