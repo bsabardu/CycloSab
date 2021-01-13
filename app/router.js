@@ -16,6 +16,8 @@ router.get('/article/:id', mainController.articlePage);
 // page panier
 router.get('/cart', cartController.cartPage);
 
+//add to cart
+router.get('/cart/add/:id', cartController.addToCart)
 
 // on exporte le router 
 module.exports = router;

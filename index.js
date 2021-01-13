@@ -6,6 +6,9 @@ const express = require('express');
 // on importe le router
 const router = require('./app/router');
 
+//import express session
+const session = require('express-session')
+
 // un peu de config
 const PORT = process.env.PORT || 5000;
 
@@ -17,6 +20,14 @@ app.set('views', './app/views')
 
 // servir les fichiers statiques qui sont dans "integration"
 app.use(express.static('integration'));
+
+//express session
+app.use(session({
+  secret: process.env.SECRET,
+  resave: true,
+  saveUninitialized: true,
+}))
+
 
 // routage !
 app.use(router);

@@ -1,14 +1,38 @@
-const path = require('path');
+const dataMapper = require('../dataMapper');
 
-const cartController = {
 
-  // méthode pour afficher le panier
-  cartPage: (request, response) => {
-    const filePath = path.resolve(__dirname + '/../../integration/panier.html');
-    response.sendFile(filePath);
+exports.cartPage = (request, response) => {
+  if(!request.session.cart) {
+    request.session.cart = []
   }
 
-};
+  response.render('panier', {
+    cart: request.session.cart
+  })
+}
+
+exports.addToCart = (request, response) => {
+  const id = parseInt(request.params.id, 10)
+
+  if(!request.session.cart) request.session.cart = [];
+
+  const product = request.session.cart.find(element => element.id === id)
+
+  if (product) {
+    product.quantity++
+    response.redirect('/cart')
+  } else {
+
+    dataMapper.getOneProduct(id, (product) => {
+
+      product.quantity = 1;
+      request.session.cart.push(product)
+      response.redirect('/cart')
+
+      })
+
+  }
 
 
-module.exports = cartController;
+  // response.render('panier', {cart : request.session.cart})
+}

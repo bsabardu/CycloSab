@@ -1,5 +1,6 @@
 <%- include('partials/_header') %> 
 
+<% console.log(cart) %>
   <!-- Page Content -->
   <div class="container container-main">
 
@@ -14,42 +15,30 @@
               <th>Prix HT</th>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <img class="img-thumbnail img-cart-list" src="./images/tifa.png" alt="">
-                  <div class="item-description">
-                      <h5 class="item-title">Tifa</h5>
-                      <p class="item-prize">$24.99</p>
-                  </div>
-                </td>
+                <% 
+                console.log(cart);
+                    if(cart) {
+                    for (product of cart) { %>
+                    <tr>
+                      <td>
+                        <img class="img-thumbnail img-cart-list" src="/images/<%= product.name %>.jpg" alt="Image du produit <%= product.name %> ">
+                        <div class="item-description">
+                            <h5 class="item-title"><%= product.name %></h5>
+                            <p class="item-prize"><%= product.price %> €</p>
+                        </div>
+                      </td>
+      
+                      <td>
+                        <strong><%= product.quantity %></strong>
+                        <a href="/cart/add/<%= product.id %>">+</a> / <a href="#">-</a>
+                      </td>
+      
+                      <td>
+                        <p class="item-subtotal"><%= product.price * product.quantity %> €</p>
+                      </td>
+                    </tr>
 
-                <td>
-                  <strong>1</strong>
-                  <a href="#">+</a> / <a href="#">-</a>
-                </td>
-
-                <td>
-                  <p class="item-subtotal">$24.99</p>
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <img class="img-thumbnail img-cart-list" src="./images/cloud.png" alt="">
-                  <div class="item-description">
-                      <h5 class="item-title">Cloud</h5>
-                      <p class="item-prize">$24.99</p>
-                  </div>
-                </td>
-
-                <td>
-                  <strong>2</strong>
-                  <a href="#">+</a> / <a href="#">-</a>
-                </td>
-                <td>
-                  <p class="item-subtotal">$49.98</p>
-                </td>
-              </tr>
+                <% }} %>
 
               <!-- Frais de port -->
               <tr>
