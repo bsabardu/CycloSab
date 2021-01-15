@@ -1,4 +1,8 @@
- <%- include('partials/_header') %>
+ <% const title = product.name %>
+
+ <% const desc = `Cette page présente le produit : ${product.name} - ${product.description}` %>
+ 
+ <%- include('partials/_header', {title,desc}) %>
 
  <!-- Page Content -->
  <div class="container container-main">
